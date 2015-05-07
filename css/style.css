@@ -29,7 +29,7 @@ ul {
 }
 
 .previewSolly {
-	background: url("../images/solly_basis.svg") no-repeat;
+	background: url("../images/png/solly_basis.png") no-repeat;
 }
 
 .headSolly, .eyesSolly, .antSolly, .feetSolly {
@@ -128,170 +128,208 @@ ul {
 }
 
 #head_builder {
-	background-image: url("../images/head_builder.svg");
+	background-image: url("../images/png/head/head_builder_small.png");
 	background-repeat:no-repeat;
+	background-size:contain;
 }
 
 #head_db {
-	background: url("../images/head_db.svg");
+	background: url("../images/png/head/head_db_small.png");
 	background-repeat:no-repeat;
+	background-size:contain;
 }
 
 #head_girl {
-	background: url("../images/head_girl.svg");
+	background: url("../images/png/head/head_girl_small.png");
 	background-repeat:no-repeat;
+	background-size:contain;
 }
 
 #head_grey {
-	background: url("../images/head_grey.svg");
+	background: url("../images/png/head/head_grey_small.png");
 	background-repeat:no-repeat;
+	background-size:contain;
 }
 
 #head_hero {
-	background: url("../images/head_hero.svg");
+	background: url("../images/png/head/head_hero_small.png");
 	background-repeat:no-repeat;
+	background-size:contain;
 }
 
 #head_lb {
-	background: url("../images/head_lb.svg");
+	background: url("../images/png/head/head_lb_small.png");
 	background-repeat:no-repeat;
+	background-size:contain;
 }
 
 #head_lg {
-	background: url("../images/head_lg.svg");
+	background: url("../images/png/head/head_lg_small.png");
 	background-repeat:no-repeat;
+	background-size:contain;
 }
 
 #head_lp {
-	background: url("../images/head_lp.svg");
+	background: url("../images/png/head/head_lp_small.png");
 	background-repeat:no-repeat;
+	background-size:contain;
 }
 
 #head_lr {
-	background: url("../images/head_lr.svg");
+	background: url("../images/png/head/head_lr_small.png");
 	background-repeat:no-repeat;
+	background-size:contain;
 }
 
 #head_ly {
-	background: url("../images/head_ly.svg");
+	background: url("../images/png/head/head_ly_small.png");
 	background-repeat:no-repeat;
+	background-size:contain;
 }
 
 #head_trans {
-	background: url("../images/head_trans.svg");
+	background: url("../images/png/head/head_trans_small.png");
 	background-repeat:no-repeat;
+	background-size:contain;
 }
 
 /*=======================eyes===============================*/
 
 #eyes_db {
-	background: url("../images/eyes_db.svg") no-repeat;
+	background: url("../images/png/eyes/eyes_db_small.png") no-repeat;
+	background-size:contain;
 }
 
 #eyes_girl {
-	background: url("../images/eyes_girl.svg") no-repeat;
+	background: url("../images/png/eyes/eyes_girl_small.png") no-repeat;
+	background-size:contain;
 }
 
 #eyes_lb {
-	background: url("../images/eyes_lb.svg") no-repeat;
+	background: url("../images/png/eyes/eyes_lb_small.png") no-repeat;
+	background-size:contain;
 }
 
 #eyes_lg {
-	background: url("../images/eyes_lg.svg") no-repeat;
+	background: url("../images/png/eyes/eyes_lg_small.png") no-repeat;
+	background-size:contain;
 }
 
 #eyes_lp {
-	background: url("../images/eyes_lp.svg") no-repeat;
+	background: url("../images/png/eyes/eyes_lp_small.png") no-repeat;
+	background-size:contain;
 }
 
 #eyes_lr {
-	background: url("../images/eyes_lr.svg") no-repeat;
+	background: url("../images/png/eyes/eyes_lr_small.png") no-repeat;
+	background-size:contain;
 }
 
 #eyes_ly {
-	background: url("../images/eyes_ly.svg") no-repeat;
+	background: url("../images/png/eyes/eyes_ly_small.png") no-repeat;
+	background-size:contain;
 }
 
 #eyes_trans {
-	background: url("../images/eyes_trans.svg") no-repeat;
+	background: url("../images/png/eyes/eyes_trans_small.png") no-repeat;
+	background-size:contain;
 }
 
 /*========antennas================*/
 
 #ant_builder {
-	background: url("../images/ant_builder.svg") no-repeat;
+	background: url("../images/png/ant/ant_builder_small.png") no-repeat;
+	background-size:contain;
 }
 
 #ant_db {
-	background: url("../images/ant_db.svg") no-repeat;
+	background: url("../images/png/ant/ant_db_small.png") no-repeat;
+	background-size:contain;
 }
 
 #ant_girl {
-	background: url("../images/ant_girl.svg") no-repeat;
+	background: url("../images/png/ant/ant_girl_small.png") no-repeat;
+	background-size:contain;
 }
 
 #ant_grey {
-	background: url("../images/ant_grey.svg") no-repeat;
+	background: url("../images/png/ant/ant_grey_small.png") no-repeat;
+	background-size:contain;
 }
 
 #ant_lb {
-	background: url("../images/ant_lb.svg") no-repeat;
+	background: url("../images/png/ant/ant_lb_small.png") no-repeat;
+	background-size:contain;
 }
 
 #ant_lg {
-	background: url("../images/ant_lg.svg") no-repeat;
+	background: url("../images/png/ant/ant_lg_small.png") no-repeat;
+	background-size:contain;
 }
 
 #ant_lp {
-	background: url("../images/ant_lp.svg") no-repeat;
+	background: url("../images/png/ant/ant_lp_small.png") no-repeat;
+	background-size:contain;
 }
 
 #ant_lr {
-	background: url("../images/ant_lr.svg") no-repeat;
+	background: url("../images/png/ant/ant_lr_small.png") no-repeat;
+	background-size:contain;
 }
 
 #ant_ly {
-	background: url("../images/ant_ly.svg") no-repeat;
+	background: url("../images/png/ant/ant_ly_small.png") no-repeat;
+	background-size:contain;
 }
 
 #ant_trans {
-	background: url("../images/ant_trans.svg") no-repeat;
+	background: url("../images/png/ant/ant_trans_small.png") no-repeat;
+	background-size:contain;
 }
 
 /*==========================feet=======================*/
 
 #feet_db {
-	background: url("../images/feet_db.svg") no-repeat;
+	background: url("../images/png/feet/feet_db_small.png") no-repeat;
+	background-size:contain;
 }
 
 #feet_girl {
-	background: url("../images/feet_girl.svg") no-repeat;
+	background: url("../images/png/feet/feet_girl_small.png") no-repeat;
+	background-size:contain;
 }
 
 #feet_grey {
-	background: url("../images/feet_grey.svg") no-repeat;
+	background: url("../images/png/feet/feet_grey_small.png") no-repeat;
+	background-size:contain;
 }
 
 #feet_lb {
-	background: url("../images/feet_lb.svg") no-repeat;
+	background: url("../images/png/feet/feet_lb_small.png") no-repeat;
+	background-size:contain;
 }
 
 #feet_lg {
-	background: url("../images/feet_lg.svg") no-repeat;
+	background: url("../images/png/feet/feet_lg_small.png") no-repeat;
+	background-size:contain;
 }
 
 #feet_lp {
-	background: url("../images/feet_lp.svg") no-repeat;
+	background: url("../images/png/feet/feet_lp_small.png") no-repeat;
+	background-size:contain;
 }
 
 #feet_lr {
-	background: url("../images/feet_lr.svg") no-repeat;
+	background: url("../images/png/feet/feet_lr_small.png") no-repeat;
+	background-size:contain;
 }
 
 #feet_ly {
-	background: url("../images/feet_ly.svg") no-repeat;
+	background: url("../images/png/feet/feet_ly_small.png") no-repeat;
+	background-size:contain;
 }
 
 #feet_trans {
-	background: url("../images/feet_trans.svg") no-repeat;
+	background: url("../images/png/feet/feet_trans_small.png") no-repeat;
+	background-size:contain;
 }

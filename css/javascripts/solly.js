@@ -2,8 +2,8 @@
 $(function() {
 var catArray = ['.headSolly', '.eyesSolly', '.antSolly', '.feetSolly'];
 
-//var ratio   = window.devicePixelRatio || 1;
-var ratio = 1;
+var ratio   = window.devicePixelRatio || 1;
+//var ratio = 1;
 console.log(ratio);
 var canvas = document.getElementById("myCanvas");
 canvas.style.width = canvas.width + "px";
@@ -33,26 +33,11 @@ function drawBodyPart(context, url, xpos, ypos, width, height) {
 function drawSolly() {
     var context = canvas.getContext("2d");
 	context.clearRect ( 0 , 0 , canvas.width, canvas.height );
-	//drawBodyPart(context, chosen_feetL, 640, 650, 350, 350);
-	//drawBodyPart(context, body_basis, 0, 0, 1000, 1000);
-	//drawBodyPart(context, chosen_head, 0, 0, 1000, 1000);
-	//drawBodyPart(context, chosen_antL, 400,0, 300, 300);
-	//drawBodyPart(context, chosen_eyesL, 130, 550, 200, 200);
-	
-	//ipad small
-	drawBodyPart(context, chosen_feetL, 320, 325, 175, 175);
-	drawBodyPart(context, body_basis, 0, 0, 500, 500);
-	drawBodyPart(context, chosen_head, 0, 0, 500, 500);
-	drawBodyPart(context, chosen_antL, 200,0, 150, 150);
-	drawBodyPart(context, chosen_eyesL, 65, 275, 100, 100); 
-	
-	//desktop
-	//drawBodyPart(context, chosen_feetL, 780, 500, 800, 400);
-	//drawBodyPart(context, body_basis, 0, 0, 1800, 900);
-	//drawBodyPart(context, chosen_head, 0, 0, 1800, 900);
-	//drawBodyPart(context, chosen_eyesL, 500, 500, 350, 175); 
-	//drawBodyPart(context, chosen_antL, 750,75, 450, 250);
-	
+	drawBodyPart(context, chosen_feetL, 0, 0, 1000, 1000);
+	drawBodyPart(context, body_basis, 0, 0, 1000, 1000);
+	drawBodyPart(context, chosen_head, 0, 0, 1000, 1000);
+	drawBodyPart(context, chosen_antL, 0,0, 1000, 1000);
+	drawBodyPart(context, chosen_eyesL, 0, 0, 1000, 1000); 
 };
 
 $('#exportImage').on('click', function() {
@@ -81,7 +66,8 @@ $('#exportImage').on('click', function() {
 
 $('.head').on('click', function() {  
 	chosen_head = $(this).css('background-image');
-	chosen_head = chosen_head.replace('url(','').replace(')','');
+	chosen_head = chosen_head.replace('url(','').replace(')','').replace("_small", "");
+	console.log(chosen_head);
 	$(catArray[0]).css('left', '-100%');
 	$(catArray[1]).css('left', '0px');
 	drawSolly();
@@ -89,7 +75,7 @@ $('.head').on('click', function() {
 
 $('.eyes').on('click', function() {  
 	var chosen_eyes = $(this).css('background-image');
-	chosen_eyesL = chosen_eyes.replace('url(','').replace(')','');
+	chosen_eyesL = chosen_eyes.replace('url(','').replace(')','').replace("_small", "");
 	$(catArray[1]).css('left', '-100%');
 	$(catArray[2]).css('left', '0px');
 	drawSolly();
@@ -97,7 +83,7 @@ $('.eyes').on('click', function() {
 
 $('.ant').on('click', function() {  
 	var chosen_ant = $(this).css('background-image');
-	chosen_antL = chosen_ant.replace('url(','').replace(')','');
+	chosen_antL = chosen_ant.replace('url(','').replace(')','').replace("_small", "");
 	$(catArray[2]).css('left', '-100%');
 	$(catArray[3]).css('left', '0px');
 	drawSolly();
@@ -105,7 +91,7 @@ $('.ant').on('click', function() {
 
 $('.feet').on('click', function() {  
 	var chosen_feet = $(this).css('background-image');
-	chosen_feetL = chosen_feet.replace('url(','').replace(')','');
+	chosen_feetL = chosen_feet.replace('url(','').replace(')','').replace("_small", "");
 	$(catArray[3]).css('left', '-100%');
 	$(catArray[4]).css('left', '0px');
 	drawSolly();
