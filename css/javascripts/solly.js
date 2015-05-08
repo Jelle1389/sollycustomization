@@ -33,11 +33,11 @@ function drawBodyPart(context, url, xpos, ypos, width, height) {
 function drawSolly() {
     var context = canvas.getContext("2d");
 	context.clearRect ( 0 , 0 , canvas.width, canvas.height );
-	drawBodyPart(context, chosen_feetL, 0, 0, 1000, 1000);
-	drawBodyPart(context, body_basis, 0, 0, 1000, 1000);
-	drawBodyPart(context, chosen_head, 0, 0, 1000, 1000);
-	drawBodyPart(context, chosen_antL, 0,0, 1000, 1000);
-	drawBodyPart(context, chosen_eyesL, 0, 0, 1000, 1000); 
+	drawBodyPart(context, body_basis, 0, 0, 500*ratio, 500*ratio);
+	drawBodyPart(context, chosen_head, 0, 0, 500*ratio, 500*ratio);
+	drawBodyPart(context, chosen_antL, 0,0, 500*ratio, 500*ratio);
+	drawBodyPart(context, chosen_eyesL, 0, 0, 500*ratio, 500*ratio);
+	drawBodyPart(context, chosen_feetL, 0, 0, 500*ratio, 500*ratio); 
 };
 
 $('#exportImage').on('click', function() {
