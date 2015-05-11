@@ -3,28 +3,37 @@ $(function() {
 var catArray = ['.headSolly', '.eyesSolly', '.antSolly', '.feetSolly'];
 
 var ratio   = window.devicePixelRatio || 1;
-//var ratio = 1;
-console.log(ratio);
 var canvas = document.getElementById("myCanvas");
 canvas.style.width = canvas.width + "px";
 canvas.style.height = canvas.height + "px";
 canvas.width  *= ratio;
 canvas.height *= ratio;
 
-var body_basis_url = $(".previewSolly").css('background-image');
-var body_basis = body_basis_url.replace('url(','').replace(')','');
-drawSolly();
+var solly = {
+	body_basis: new Image(),
+	chosen_head: new Image(),
+	chosen_eyes: new Image(),
+	chosen_antL: new Image(),
+	chosen_feetL: new Image()
+}
 
-var chosen_head;
-var chosen_eyesL;
-var chosen_antL;
-var chosen_feetL;
+var body_basis_url = $(".previewSolly").css('background-image').replace('url(','').replace(')','');
+var body_basis = {};
 
-function drawBodyPart(context, url, xpos, ypos, width, height) {
+loadBodyPart(body_basis_url, "body_basis");
+
+function drawBodyPart(context, img, xpos, ypos, width, height) {
+	if (img){
+		context.drawImage(img,xpos,ypos,width,height);
+	}
+};
+
+function loadBodyPart (url, destination) {
 	if(url) {
 		var img = new Image;
-		img.onload = function(){ 
-			context.drawImage(img,xpos,ypos,width,height); 
+		img.onload = function(){
+			solly[destination] = img;
+			drawSolly();
 		};
 		img.src = url;
 	}
@@ -33,26 +42,23 @@ function drawBodyPart(context, url, xpos, ypos, width, height) {
 function drawSolly() {
     var context = canvas.getContext("2d");
 	context.clearRect ( 0 , 0 , canvas.width, canvas.height );
-	drawBodyPart(context, body_basis, 0, 0, 500*ratio, 500*ratio);
-	drawBodyPart(context, chosen_head, 0, 0, 500*ratio, 500*ratio);
-	drawBodyPart(context, chosen_antL, 0,0, 500*ratio, 500*ratio);
-	drawBodyPart(context, chosen_eyesL, 0, 0, 500*ratio, 500*ratio);
-	drawBodyPart(context, chosen_feetL, 0, 0, 500*ratio, 500*ratio); 
+	drawBodyPart(context, solly.chosen_feet, 0, 0, 500*ratio, 500*ratio); 
+	drawBodyPart(context, solly.body_basis, 0, 0, 500*ratio, 500*ratio);
+	drawBodyPart(context, solly.chosen_head, 0, 0, 500*ratio, 500*ratio);
+	drawBodyPart(context, solly.chosen_ant, 0,0, 500*ratio, 500*ratio);
+	drawBodyPart(context, solly.chosen_eyes, 0, 0, 500*ratio, 500*ratio);
 };
 
 $('#exportImage').on('click', function() {
-// Get the canvas screenshot as PNG
 		$('.export-btn button').addClass('appearance');
 		document.getElementById("btn-text").innerHTML = "Geactiveerd";
 		
 		var screenshot = Canvas2Image.saveAsPNG(canvas, true);
-		// This is a little trick to get the SRC attribute from the generated <img> screenshot
 		canvas.parentNode.appendChild(screenshot);
 		screenshot.id = "canvasimage";		
 		data = $('#canvasimage').attr('src');
 		canvas.parentNode.removeChild(screenshot);
 
-		// Send the screenshot to PHP to save it on the server
 		var url = 'upload/export.php';
 		$.ajax({ 
 		    type: "POST", 
@@ -64,37 +70,27 @@ $('#exportImage').on('click', function() {
 		});
 });
 
-$('.head').on('click', function() {  
-	chosen_head = $(this).css('background-image');
-	chosen_head = chosen_head.replace('url(','').replace(')','').replace("_small", "");
-	console.log(chosen_head);
-	$(catArray[0]).css('left', '-100%');
-	$(catArray[1]).css('left', '0px');
-	drawSolly();
+function selectPart(part, index, owner) {
+	var url = owner.css('background-image').replace('url(','').replace(')','').replace("_small", "");
+	$(catArray[index]).css('left', '-100%');
+	$(catArray[index + 1]).css('left', '0px');
+	loadBodyPart(url, part);	
+};
+
+$('.head').on('click', function() {
+	selectPart("chosen_head", 0, $(this));
 });
 
 $('.eyes').on('click', function() {  
-	var chosen_eyes = $(this).css('background-image');
-	chosen_eyesL = chosen_eyes.replace('url(','').replace(')','').replace("_small", "");
-	$(catArray[1]).css('left', '-100%');
-	$(catArray[2]).css('left', '0px');
-	drawSolly();
+	selectPart("chosen_eyes", 1, $(this));
 });
 
 $('.ant').on('click', function() {  
-	var chosen_ant = $(this).css('background-image');
-	chosen_antL = chosen_ant.replace('url(','').replace(')','').replace("_small", "");
-	$(catArray[2]).css('left', '-100%');
-	$(catArray[3]).css('left', '0px');
-	drawSolly();
+	selectPart("chosen_ant", 2, $(this));
 });
 
 $('.feet').on('click', function() {  
-	var chosen_feet = $(this).css('background-image');
-	chosen_feetL = chosen_feet.replace('url(','').replace(')','').replace("_small", "");
-	$(catArray[3]).css('left', '-100%');
-	$(catArray[4]).css('left', '0px');
-	drawSolly();
+	selectPart("chosen_feet", 3, $(this));
 	$('.export-btn').addClass('expand');
 	$('#myCanvas').addClass('margin-canvas');
 });
