@@ -117,14 +117,42 @@ ul {
 	border: 2px solid green !important;
 }
 
-.output-solly {
+.solly-background {
+	background-image: url('../images/solly_background.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: fixed;
+	width: 100%;
+	left: 0;
+	z-index: -1;
+	height: 100%;
+	overflow: hidden;	
+}
+
+.image-container {
+	position:fixed;
+	width:100%;
+	bottom:0px;
+	left:0px;
+}
+
+.image-container li {
 	background-size:contain;
 	background-repeat:no-repeat;
+	background-position:50%;
 	width:25%;
 	height:150px;
 	display: block;
   	float: left;
   	margin-bottom: 40px;
+}
+
+.image-container li:nth-child(even) {
+	margin-top:20px;
+}
+
+.image-container li:nth-child(n+4) {
+	margin-left:30px;
 }
 
 #head_builder {
