@@ -129,7 +129,8 @@ $('.feet').on('click', function() {
 });
 
 $('.refresh').on('click', function() {
-	selectPart("", 0, $(this));
+	$(catArray[3]).css('left', '-100%');
+	$(catArray[0]).css('left', '0%');
 	$('.refresh').removeClass('transition-in');
 	$('#myCanvas').removeClass('margin-canvas');
 	$('.export-container').removeClass('expand');
