@@ -49,8 +49,39 @@ function drawSolly() {
 	drawBodyPart(context, solly.chosen_eyes, 0, 0, 500*ratio, 500*ratio);
 };
 
+var email;
+var emailValidated;
+checkEmail();
+
+function checkEmail() {
+	email = $('#input').val();
+	var emailReg = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	if(!emailReg.test(email)) {  
+        $('.export-container button').removeClass('expand');
+		$('.export-container input').removeClass('left');
+		$('.export-container input').removeClass('appearance');
+   	} else {
+		$('.export-container button').addClass('expand');
+		$('.export-container input').addClass('left');
+		$('.export-container input').addClass('appearance');
+		emailValidated = email;
+		console.log(emailValidated);	
+	}
+	setTimeout (function () {
+		checkEmail();
+	},1000);
+}
+
+console.log(email);
+
 $('#exportImage').on('click', function() {
-		$('.export-btn button').addClass('appearance');
+		$('.export-container button').addClass('appearance');
+		$('.export-container button').addClass('right');
+		$('.export-container button').addClass('fade-out');
+		$('.export-container input').addClass('transition-out');
+		$('.refresh').removeClass('transition-in');
+		$('.refresh').addClass('fade-out');
+		$('#myCanvas').addClass('liftoff');
 		document.getElementById("btn-text").innerHTML = "Geactiveerd";
 		
 		var screenshot = Canvas2Image.saveAsPNG(canvas, true);
@@ -58,14 +89,15 @@ $('#exportImage').on('click', function() {
 		screenshot.id = "canvasimage";		
 		data = $('#canvasimage').attr('src');
 		canvas.parentNode.removeChild(screenshot);
-
+		console.log(emailValidated);
 		var url = 'upload/export.php';
 		$.ajax({ 
 		    type: "POST", 
 		    url: url,
 		    dataType: 'text',
 		    data: {
-		        base64data : data
+		        email: emailValidated,
+				base64data : data
 		    }
 		});
 });
@@ -91,8 +123,16 @@ $('.ant').on('click', function() {
 
 $('.feet').on('click', function() {  
 	selectPart("chosen_feet", 3, $(this));
-	$('.export-btn').addClass('expand');
 	$('#myCanvas').addClass('margin-canvas');
+	$('.export-container').addClass('expand');
+	$('.refresh').addClass('transition-in');
+});
+
+$('.refresh').on('click', function() {
+	selectPart("", 0, $(this));
+	$('.refresh').removeClass('transition-in');
+	$('#myCanvas').removeClass('margin-canvas');
+	$('.export-container').removeClass('expand');
 });
 
 });
