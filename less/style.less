@@ -12,6 +12,24 @@ ul {
 	padding:0;
 }
 
+.build-top {
+	background-image: url('../images/build-bg-top.svg');
+	background-size: cover;
+	height: 100vh;
+	width: 1024px;
+	z-index: 1;
+	position: fixed;
+}
+
+.build-bottom {
+	background-image:url('../images/build-bg-bottom.svg');
+	background-size:cover;
+	height:100vh;
+	width:1024px;
+	position:fixed;
+	z-index:-1;	
+}
+
 .categories {
 	z-index:99999999;
 	background:white;
@@ -26,10 +44,6 @@ ul {
 	margin-left:-4px; /*remove gap between li's*/
 	cursor:pointer;
 	z-index:0;
-}
-
-.previewSolly {
-	background: url("../images/png/solly_basis.png") no-repeat;
 }
 
 .headSolly, .eyesSolly, .antSolly, .feetSolly {
@@ -77,76 +91,78 @@ ul {
 }
 
 .export-container {
-	margin:80px auto 0px;
+	margin:40px auto 0px;
 	width:324px;
+	z-index:999999999;
+	position:fixed;
+	left:calc(~'(100% - 324px) / 2');
 	overflow:hidden;
+	bottom:20px;
 	opacity:0;
 	height:0px !important;
 	transition:opacity .5s;
 	-webkit-transition:opacity .5s;
 	-moz-transition:opacity .5s;
 	-o-transition:opacity .5s;
-}
-
-.export-container button {
-	font-size: 18px;
-	position: relative;
-	float:left;
-	padding: 0px;
-	height:0px;
-	opacity:0;
-	color: white;
-	width: 160px;
-	border-radius: 6px;
-	border: 2px solid green;
-	border-image: none;
-	background-color: rgb(129, 204, 90);
-	transition:all .5s;
-	-webkit-transition:all .5s;
-	-moz-transition:all .5s;
-	-o-transition:all .5s;
+	button {
+		font-size: 18px;
+		position: relative;
+		float:left;
+		padding: 0px;
+		height:0px;
+		opacity:0;
+		color: white;
+		width: 160px;
+		border-radius: 6px;
+		border: 2px solid green;
+		border-image: none;
+		background-color: rgb(129, 204, 90);
+		transition:all .5s;
+		-webkit-transition:all .5s;
+		-moz-transition:all .5s;
+		-o-transition:all .5s;
+	}
+	input {
+		float: left;
+		margin-left:80px;
+		margin-right:4px;
+		width:160px;
+		height: 49px;
+		font-size:18px;
+		text-align: center;
+		border-radius: 5px;
+		border: 2px solid orange;
+		transition:margin-left .5s;
+		-webkit-transition:margin-left .5s;
+		-moz-transition:margin-left .5s;
+		-o-transition:margin-left .5s;	
+	}
 }
 
 #btn-text {
 	margin:0;
 }
 
-.export-container input {
-	float: left;
-	margin-left:80px;
-	margin-right:4px;
-	width:160px;
-	height: 49px;
-	font-size:18px;
-	text-align: center;
-	border-radius: 5px;
-	border: 2px solid orange;
-	transition:margin-left .5s;
-	-webkit-transition:margin-left .5s;
-	-moz-transition:margin-left .5s;
-	-o-transition:margin-left .5s;
-}
-
 .refresh {
 	width:1024px;
 	height:30px;
 	position:fixed;
+	z-index:2;
 	top:0px;
 	opacity:0;
 	transition:all .5s;
 	-webkit-transition:all .5s;
 	-moz-transition:all .5s;
 	-o-transition:all .5s;
-}
-
-.refresh img {
-	height:100%;
-	margin-left:calc(50% - 30px);
+	img {
+		height:100%;
+		margin-left:calc(~'50% - 30px');	
+	}
 }
 
 @keyframes bounce {
 	0%, 100% {
-		margin-top: 0px;	
+		margin-top: 50px;	
 		margin-left:0px;	
 	}
 	25% {
@@ -154,7 +170,7 @@ ul {
 	}
 
 	50% {
-		margin-top:5px;
+		margin-top:55px;
 	}
 	75% {
 		margin-left:-2px;
@@ -163,7 +179,7 @@ ul {
 
 @-webkit-keyframes bounce {
 	0%, 100% {
-		margin-top: 0px;	
+		margin-top: 50px;	
 		margin-left:0px;	
 	}
 	25% {
@@ -171,7 +187,7 @@ ul {
 	}
 
 	50% {
-		margin-top:5px;
+		margin-top:55px;
 	}
 	75% {
 		margin-left:-2px;
@@ -249,7 +265,7 @@ ul {
 	position: fixed;
 	width: 100%;
 	left: 0;
-	z-index: -1;
+	z-index: 0;
 	height: 100%;
 	overflow: hidden;	
 }
@@ -259,26 +275,23 @@ ul {
 	width:100%;
 	bottom:0px;
 	left:0px;
-}
-
-.image-container li {
-	background-size:contain;
-	background-repeat:no-repeat;
-	background-position:50%;
-	width:25%;
-	height:150px;
-	display: block;
-  	float: left;
-  	margin-bottom: 40px;
-}
-
-.image-container li:nth-child(even) {
-	margin-top:20px;
-}
-
-.image-container li:nth-child(n+4) {
-	margin-left:30px;
-}
+	li {
+		background-size:contain;
+		background-repeat:no-repeat;
+		background-position:50%;
+		width:25%;
+		height:150px;
+		display: block;
+		float: left;
+		margin-bottom: 40px;
+		&:nth-child(even) {
+			margin-top:20px;
+		}
+		&:nth-child(n+4) {
+			margin-left:30px;
+		}
+	}
+}	
 
 #head_builder {
 	background-image: url("../images/png/head/head_builder_small.png");
