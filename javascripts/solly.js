@@ -42,11 +42,11 @@ function loadBodyPart (url, destination) {
 function drawSolly() {
     var context = canvas.getContext("2d");
 	context.clearRect ( 0 , 0 , canvas.width, canvas.height );
-	drawBodyPart(context, solly.chosen_feet, 80, 125, 400*ratio, 400*ratio); 
-	drawBodyPart(context, solly.body_basis, 80, 125, 400*ratio, 400*ratio);
-	drawBodyPart(context, solly.chosen_head, 80, 125, 400*ratio, 400*ratio);
-	drawBodyPart(context, solly.chosen_ant, 80, 125, 400*ratio, 400*ratio);
-	drawBodyPart(context, solly.chosen_eyes, 80, 125, 400*ratio, 400*ratio);
+	drawBodyPart(context, solly.chosen_feet, 80, 70, 400*ratio, 400*ratio); 
+	drawBodyPart(context, solly.body_basis, 80, 70, 400*ratio, 400*ratio);
+	drawBodyPart(context, solly.chosen_head, 80, 70, 400*ratio, 400*ratio);
+	drawBodyPart(context, solly.chosen_ant, 80, 70, 400*ratio, 400*ratio);
+	drawBodyPart(context, solly.chosen_eyes, 80, 70, 400*ratio, 400*ratio);
 };
 
 var email;

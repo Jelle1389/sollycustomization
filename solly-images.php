@@ -1,5 +1,15 @@
 <?php
 $dir    = 'upload';
 $files1 = scandir($dir);
-echo json_encode($files1);
+
+$filteredFiles = array();
+
+foreach ($files1 as &$filename) {
+    if(strpos($filename,'png') !== false) {
+		$filteredFiles[] = $filename;
+	}
+}	
+
+echo json_encode($filteredFiles);
+
 ?>
