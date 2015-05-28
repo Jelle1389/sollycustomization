@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<title>Solly Editor</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<link href="less/style.less" rel="stylesheet"/>
+	<!--<link href="less/style.less" rel="stylesheet"/>-->
     <link href="css/style.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -16,74 +16,74 @@
 </head>
 
 <body>
-
-<div class="build-top"></div>
-<div class="build-bottom"></div>
-
-<div class="categories">
-    <ul class="headSolly">
-    	<li class="head" id="head_builder"></li>
-        <li class="head" id="head_db"></li>
-        <li class="head" id="head_girl"></li>
-        <li class="head" id="head_grey"></li>
-        <li class="head" id="head_hero"></li>
-        <li class="head" id="head_lb"></li>
-        <li class="head" id="head_lg"></li>
-        <li class="head" id="head_lp"></li>
-        <li class="head" id="head_lr"></li>
-        <li class="head" id="head_ly"></li>
-        <li class="head" id="head_trans"></li>
-        <li class="clearfix"></li>
-    </ul>
-    <ul class="eyesSolly">
-    	<li class="eyes" id="eyes_db"></li>
-        <li class="eyes" id="eyes_girl"></li>
-        <li class="eyes" id="eyes_lb"></li>
-        <li class="eyes" id="eyes_lg"></li>
-        <li class="eyes" id="eyes_lp"></li>
-        <li class="eyes" id="eyes_lr"></li>
-        <li class="eyes" id="eyes_trans"></li>
-    </ul>
-    <ul class="antSolly">
-    	<li class="ant" id="ant_builder"></li>
-    	<li class="ant" id="ant_db"></li>
-        <li class="ant" id="ant_girl"></li>
-        <li class="ant" id="ant_grey"></li>
-        <li class="ant" id="ant_lb"></li>
-        <li class="ant" id="ant_lg"></li>
-        <li class="ant" id="ant_lp"></li>
-        <li class="ant" id="ant_lr"></li>
-        <li class="ant" id="ant_ly"></li>
-        <li class="ant" id="ant_trans"></li>
-    </ul>
-    <ul class="feetSolly">
-    	<li class="feet" id="feet_db"></li>
-        <li class="feet" id="feet_girl"></li>
-        <li class="feet" id="feet_grey"></li>
-        <li class="feet" id="feet_lb"></li>
-        <li class="feet" id="feet_lg"></li>
-        <li class="feet" id="feet_lp"></li>
-        <li class="feet" id="feet_lr"></li>
-        <li class="feet" id="feet_ly"></li>
-        <li class="feet" id="feet_trans"></li>
-    </ul>
+<div class="all-important">
+    <div class="build-top"></div>
+    <div class="build-bottom"></div>
+    
+    <div class="categories">
+        <ul class="headSolly">
+            <li class="head" id="head_builder"></li>
+            <li class="head" id="head_db"></li>
+            <li class="head" id="head_girl"></li>
+            <li class="head" id="head_grey"></li>
+            <li class="head" id="head_hero"></li>
+            <li class="head" id="head_lb"></li>
+            <li class="head" id="head_lg"></li>
+            <li class="head" id="head_lp"></li>
+            <li class="head" id="head_lr"></li>
+            <li class="head" id="head_ly"></li>
+            <li class="head" id="head_trans"></li>
+            <li class="clearfix"></li>
+        </ul>
+        <ul class="eyesSolly">
+            <li class="eyes" id="eyes_db"></li>
+            <li class="eyes" id="eyes_girl"></li>
+            <li class="eyes" id="eyes_lb"></li>
+            <li class="eyes" id="eyes_lg"></li>
+            <li class="eyes" id="eyes_lp"></li>
+            <li class="eyes" id="eyes_lr"></li>
+            <li class="eyes" id="eyes_trans"></li>
+        </ul>
+        <ul class="antSolly">
+            <li class="ant" id="ant_builder"></li>
+            <li class="ant" id="ant_db"></li>
+            <li class="ant" id="ant_girl"></li>
+            <li class="ant" id="ant_grey"></li>
+            <li class="ant" id="ant_lb"></li>
+            <li class="ant" id="ant_lg"></li>
+            <li class="ant" id="ant_lp"></li>
+            <li class="ant" id="ant_lr"></li>
+            <li class="ant" id="ant_ly"></li>
+            <li class="ant" id="ant_trans"></li>
+        </ul>
+        <ul class="feetSolly">
+            <li class="feet" id="feet_db"></li>
+            <li class="feet" id="feet_girl"></li>
+            <li class="feet" id="feet_grey"></li>
+            <li class="feet" id="feet_lb"></li>
+            <li class="feet" id="feet_lg"></li>
+            <li class="feet" id="feet_lp"></li>
+            <li class="feet" id="feet_lr"></li>
+            <li class="feet" id="feet_ly"></li>
+            <li class="feet" id="feet_trans"></li>
+        </ul>
+    </div>
+    
+    <div class="canvas-positioning">
+        <canvas id="myCanvas" width="500px" height="500px">
+        </canvas>
+    </div>
+    
+    <div class="export-container">
+        <input type="email" id="input" placeholder="Vul je email in">
+        <button id="exportImage"><p id="btn-text">Activeer Solly!</p></button>
+    </div>
+    
+    <div class="refresh">
+        <img src="images/refresh.svg"/>
+    </div>
 </div>
-
-<div class="canvas-positioning">
-    <canvas id="myCanvas" width="500px" height="500px">
-    </canvas>
-</div>
-
-<div class="export-container">
-	<input type="email" id="input" placeholder="Vul je email in">
-	<button id="exportImage"><p id="btn-text">Activeer Solly!</p></button>
-</div>
-
-<div class="refresh">
-	<img src="images/refresh.svg"/>
-</div>
-
-
+<h3 class="portrait-text">Draai het scherm</h3>
 
 </body>
 </html>

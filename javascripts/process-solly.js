@@ -25,8 +25,9 @@ function processData (data) {
 	}
 	
 	sollyCount+=newCount;
-	if ($('.image-container li').length > 6) {
-		$('.image-container li').slice(0, -6).addClass('fly-offscreen');
-	}
 	console.log(sollyCount);
+	console.log($('.image-container li').length);
+	if ($('.image-container li').length > 8) {
+		$('.image-container li').slice(0, -8).addClass('fly-offscreen');
+	}
 }

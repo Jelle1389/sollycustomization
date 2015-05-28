@@ -6,6 +6,28 @@ body, html {
 	max-width:1024px;
 }
 
+.portrait-text {
+	display:none;
+	color:#555;
+	width:100vw;
+	position:fixed;
+	text-align:center;
+	margin-bottom:0px;
+	line-height:50px;
+	top:calc(50% - 50px);
+	font-size:36px;
+	font-weight:300;
+}
+
+@media screen and (orientation:portrait) {
+  .all-important {
+    display:none;
+  }
+  .portrait-text {
+  	display:block;
+  }
+}
+
 ul {
 	list-style:none;
 	margin:0;
@@ -279,30 +301,40 @@ ul {
 	width:100%;
 	bottom:0px;
 	left:0px;
+	z-index:999999;
 	li {
 		background-size:contain;
 		background-repeat:no-repeat;
 		background-position:50%;
 		-webkit-animation:fly-in 3s forwards ease;
 		animation:fly-in 3s forwards ease;
-		transition:all .5s;
-		-webkit-transition:all .5s;
-		-o-transition:all .5s;
-		-moz-transition:all .5s;
+		transition:all 1s;
+		-webkit-transition:all 1s;
+		-o-transition:all 1s;
+		-moz-transition:all 1s;
 		width:20%;
 		height:150px;
 		position:relative;
-		display:block;
-		float: left;
+		display:inline-block;
+		float:left;
 		&:nth-child(n+5) {
-			margin-left:30px;
+			background-position: 60%;
+		}
+		&:nth-child(even) {
+			background-position:30% -2px;
+		}
+		&:nth-child(3) {
+			background-position:60% 5px;
+		}
+		&:nth-child(4) {
+			background-position: 35% 0px;
 		}
 	}
 }	
 
 .image-container .fly-offscreen {
-	margin-left:-800px;
-	margin-bottom:200px;
+	margin-left:-800px !important;
+	margin-bottom:200px !important;
 	z-index:999;
 	position:absolute;
 }
@@ -343,6 +375,35 @@ ul {
 	}
 	100% {
 		background-position: -1042px;
+	}
+}
+
+.sun {
+	width: 150px;
+	height: 150px;
+	float:left;
+	position:relative;
+	top: 10px;
+	z-index: 2;
+	background: url('../images/sun.svg');
+	background-repeat: no-repeat;
+	left: -50px;
+	-webkit-animation:sunMove 300s infinite linear;
+	animation:sunMove 300s infinite linear;
+}
+
+@-webkit-keyframes sunMove {
+	0% {
+		/*height:200px;*/
+		transform:rotate(0deg);
+		-webkit-transform:rotate(0deg);
+		-ms-transform:rotate(0deg);
+	}
+	100% {
+		/*height:250px;*/
+		transform:rotate(360deg);
+		-webkit-transform:rotate(360deg);
+		-ms-transform:rotate(360deg);
 	}
 }
 

@@ -68,29 +68,35 @@ function checkEmail() {
 		checkEmail();
 	},1000);
 }
-
-$('#exportImage').on('click', function() {
-		$('.export-container button').addClass('appearance right fadeout');
-		$('.export-container input').addClass('transition-out');
-		$('.refresh').removeClass('transition-in').addClass('fade-out');
-		$('#myCanvas').addClass('liftoff');
-		document.getElementById("btn-text").innerHTML = "Geactiveerd";
-		
-		var screenshot = Canvas2Image.saveAsPNG(canvas, true);
-		canvas.parentNode.appendChild(screenshot);
-		screenshot.id = "canvasimage";		
-		data = $('#canvasimage').attr('src');
-		canvas.parentNode.removeChild(screenshot);
-		var url = 'upload/export.php';
-		$.ajax({ 
-		    type: "POST", 
-		    url: url,
-		    dataType: 'text',
-		    data: {
-		        email: emailValidated,
-				base64data : data
-		    }
-		});
+$('#input').focusin(function() {
+	document.getElementById("exportImage").disabled = true; 
+});
+	
+$('#input').focusout(function() {
+	document.getElementById("exportImage").disabled = false; 
+	$('#exportImage').on('click', function() {
+			$('.export-container button').addClass('appearance right fadeout');
+			$('.export-container input').addClass('transition-out');
+			$('.refresh').removeClass('transition-in').addClass('fade-out');
+			$('#myCanvas').addClass('liftoff');
+			document.getElementById("btn-text").innerHTML = "Geactiveerd";
+			
+			var screenshot = Canvas2Image.saveAsPNG(canvas, true);
+			canvas.parentNode.appendChild(screenshot);
+			screenshot.id = "canvasimage";		
+			data = $('#canvasimage').attr('src');
+			canvas.parentNode.removeChild(screenshot);
+			var url = 'upload/export.php';
+			$.ajax({ 
+				type: "POST", 
+				url: url,
+				dataType: 'text',
+				data: {
+					email: emailValidated,
+					base64data : data
+				}
+			});
+	});
 });
 
 function selectPart(part, index, owner) {
